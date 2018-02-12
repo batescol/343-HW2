@@ -82,7 +82,7 @@ void menu() {
 
 int main(int argc, char** argv) {
 	// The board size is dynamic, but there's no way to input it yet,
-	// so it's hardcoded to 20 x 20
+	// so it's hardcoded to 20 x 20. Savefiles can change this
 	b = allocB(20, 20);
 	while (1) {
 		menu();

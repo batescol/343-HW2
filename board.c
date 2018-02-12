@@ -161,15 +161,13 @@ char gPChar(Board* q,int x, int y, int mode) {
 
 	TP* cboard = q->data+(q->bs&1)*hSize*wSize;
 
-	if (mode == 0 || mode == 1) {
-		int xIdx = x/sTP + 1;		// x coordinate in TPs
-		int cIdx = x%sTP;			// x coordinate within the TP
-		int yIdx = y+1;				// y coordinate in TPs
-		int cellval = cboard[yIdx*wSize+xIdx]>>(4*(sTP-cIdx))&1;
+	int xIdx = x/sTP + 1;		// x coordinate in TPs
+	int cIdx = x%sTP;			// x coordinate within the TP
+	int yIdx = y+1;				// y coordinate in TPs
+	int cellval = cboard[yIdx*wSize+xIdx]>>(4*(sTP-cIdx))&1;
 
-		// " " for 0, "#" for 1
-		return " #"[cellval];
-	}
+	// " " for 0, "#" for 1
+	return " #"[cellval];
 }
 
 void printBoard(Board* q) {
