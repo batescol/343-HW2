@@ -21,9 +21,17 @@ Board* allocB(int wPixels, int hPixels) {
 	// Allocating and zeroing board data
 	TP* d = (TP*)malloc(size*sizeof(TP));
 	memset(d, 0, size*sizeof(TP));
+	if (d == NULL) {
+		printf("Allocation Error");
+		exit(1);
+	}
 
 	// Allocating and assigning struct members
 	Board* q = (Board*)malloc(sizeof(Board));
+	if (q == NULL) {
+		printf("Allocation Error");
+		exit(1);
+	}
 	q->data = d;
 	q->hPixels = hPixels;
 	q->wPixels = wPixels;
